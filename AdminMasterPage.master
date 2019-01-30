@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="USER_ADMIN_page_AdminMasterPage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>AdminLogin</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:coral">
+    <form id="form1" runat="server">
+        <div align=Center>
+        <asp:Label ID="lblStatus1" runat="server" Text="Online Library Management System" ForeColor="Magenta" Font-Names="algerian" Font-Size="XX-Large" BackColor="Wheat"></asp:Label>
+         </div>
+        <br /><br />
+        <div align="Right">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Label ID="lblStatus2" runat="server" ForeColor="DarkRed" BackColor="Wheat" Font-Names="algerian" Font-Size="X-Large"></asp:Label>
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+            </Triggers>
+        </asp:UpdatePanel>
+        <asp:Timer ID="Timer1" Interval="1000" OnTick="Timer1_Tick" runat="server"></asp:Timer>
+        </div>
+        <div>
+            <div>
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <asp:Image ID="Image1" runat="server" BorderColor="Maroon" BorderStyle="Groove" BorderWidth="6" Height="400px" Width="1173px" />
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="Timer2" EventName="Tick" />
+
+                    </Triggers>
+                </asp:UpdatePanel>
+                <asp:Timer ID="Timer2" Interval="3000" OnTick="Timer2_Tick" runat="server"></asp:Timer>
+            </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

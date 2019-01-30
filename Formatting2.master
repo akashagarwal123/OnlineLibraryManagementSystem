@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Formatting2.master.cs" Inherits="MEMBERS_Formatting2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MEMBERS</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:yellow">
+    <form id="form1" runat="server">
+        <div align="Center">
+        <asp:Label ID="lblStatus1" runat="server" BackColor="SeaShell" Text="Online Library Management System" Font-Size="XX-Large" ForeColor="DarkRed" BorderColor="Snow"
+             BorderStyle="Groove" BorderWidth="5"></asp:Label><br /><br />
+            </div>
+          <div align="Center">
+              <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+              <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                  <ContentTemplate>
+                      <asp:Image ID="Image1" runat="server" BorderStyle="Ridge" BorderWidth="5" BorderColor="SandyBrown" Height="300" Width="400" />
+                  </ContentTemplate>
+                  <Triggers>
+                      <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                  </Triggers>
+              </asp:UpdatePanel>
+              <asp:Timer ID="Timer1" Interval="2000" OnTick="Timer1_Tick" runat="server"></asp:Timer>
+          </div>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    </div>
+        <div align="RIGHT">
+            <asp:HyperLink ID="HyperLink1" ForeColor="ForestGreen" Font-Overline="false" NavigateUrl="~/Online Management Library Syste/Registration.aspx" runat="server">GO_BACK</asp:HyperLink>
+    </form>
+</body>
+</html>

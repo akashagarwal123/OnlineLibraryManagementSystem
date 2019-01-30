@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LibraryManagement.master.cs" Inherits="Online_Management_Library_Syste_LibraryManagement" %><!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Library Management System</title>
+     <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+            #header {
+                background-color: lightblue;
+                height: 20%;
+                width: 100%;
+            }
+
+            #nav-bar {
+                background-color: lightgreen;
+                height: 5%;
+                width: 100%;
+            }
+            body, html { margin: 0; }
+        .auto-style5 {
+            width: 207px;
+        }
+        .auto-style6 {
+            width: 269px;
+        }
+        .auto-style8 {
+            width: 271px;
+        }
+        .auto-style9 {
+            width: 218px;
+        }
+        .auto-style10 {
+            width: 219px;
+        }
+        .auto-style11 {
+            width: 256px;
+        }
+        .auto-style12 {
+            width: 7%;
+            height: 60px;
+        }
+        </style>
+</head>
+<body style="background-color:darkkhaki">
+    <form id="form1" runat="server">
+    <div align="Center">
+        <asp:Label ID="lblStatus1" runat="server" Font-Overline="true" BorderStyle="Inset" BackColor="Wheat" BorderWidth="5" BorderColor="DarkBlue" Font-Size="XX-Large"  Text="ONLINE LIBRARY MANAGEMENT SYSTEM" Font-Bold="false" ForeColor="DarkRed"></asp:Label>\
+        <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink12" ForeColor="Orchid" BackColor="Wheat" NavigateUrl="~/Online Management Library Syste/Registration.aspx" BorderStyle="Inset" BorderColor="DarkRed" BorderWidth="6px" runat="server" Width="84px">Refresh</asp:HyperLink>
+        <asp:Button ID="CloseButton" runat="server" OnClientClick="javascript:Window.close();return false;" Text="LOG_OUT" ForeColor="RoyalBlue" BackColor="#ff99cc" OnClick="CloseButton_Click" style="margin-left: 826px;" Height="26px" Width="110px" />
+        <br /> 
+         <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                   <asp:Image ID="Image1" BorderColor="Gainsboro" BorderWidth="5" BorderStyle="Inset" runat="server" Height="400px" Width="1147px" />
+                    </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Timer2" EventName="Tick"/>
+                </Triggers>
+                </asp:UpdatePanel>
+            <asp:Timer ID="Timer2" runat="server" Interval="3000" OnTick="Timer2_Tick"></asp:Timer>
+            </div>
+        <div align="Right">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:Label ID="lblStatus6" ForeColor="DarkRed" Font-Bold="true" Font-Size="XX-Large" runat="server"></asp:Label> <br /><br />
+                    </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                </Triggers>
+                </asp:UpdatePanel>
+            <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick"></asp:Timer>
+            </div>
+         <div align="Center">
+        <table>
+      <tr>
+                <td class="auto-style10" style="background-color: #00FFFF"><asp:HyperLink ID="hyperLink1" Font-Size="Larger" Font-Bold="True" NavigateUrl="~/MEMBERS/member_account.aspx"  runat="server" ForeColor="Maroon">MEMBERS</asp:HyperLink>
+            </td>
+                <td class="auto-style11" style="background-color: #00FFFF"><asp:HyperLink ID="hyperlink2" Font-Bold="True" Font-Size="Larger" runat="server" ForeColor="Maroon" NavigateUrl="~/Online Management Library Syste/Registration.aspx">REGISTRATION</asp:HyperLink>
+                </td>
+                <td class="auto-style5" style="background-color: #00FFFF">
+                    <asp:Hyperlink ID="hyperLink3" runat="server" Font-Bold="True" Font-Size="Larger" NavigateUrl="~/BOOKSDETAILS/booksDetails.aspx" ForeColor="Maroon" >BOOKS</asp:Hyperlink>
+
+                </td>
+                <td class="auto-style6" style="background-color: #00FFFF">
+                    <asp:Hyperlink ID="hyperlink4" runat="server" Font-Bold="True"  Font-Size="Larger" BorderColor="Maroon" NavigateUrl="~/USER_ADMIN page/EMPLOYEELOGIN/Login.aspx" ForeColor="Maroon" >ADD_BOOKS</asp:Hyperlink>
+
+                </td>
+                <td class="auto-style9" style="background-color: #00FFFF">
+                    <asp:Hyperlink ID="hyperlink5" runat="server" Font-Bold="True" Font-Size="Larger" NavigateUrl="~/USER_ADMIN page/EMPLOYEELOGIN/Login.aspx" ForeColor="Maroon"  >ISSUE</asp:Hyperlink>
+
+               </td>
+                <td class="auto-style8" style="background-color: #00FFFF">
+                    <asp:Hyperlink ID="hyperLink6" runat="server" Font-Bold="True" NavigateUrl="~/USER_ADMIN page/EMPLOYEELOGIN/Login.aspx" Font-Size="Larger" ForeColor="Maroon"  >RETURN</asp:Hyperlink>
+
+                </td></tr>
+          </table></div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <div border="3" borderColor="red">
+        <table class="auto-style12" border="1">
+            <tr>
+                <td><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Details/Know_More.aspx" ForeColor="#0033cc">Know More</asp:HyperLink></td>
+            </tr>
+            <tr>
+                <td><asp:HyperLink ID="HyperLink8" runat="server" ForeColor="#0033cc" NavigateUrl="~/Details/Services.aspx">Services</asp:HyperLink></td>
+            </tr>
+            <tr>
+                <td><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/Details/Gallery_Images/Wallpapers.aspx" ForeColor="#0033cc">Gallary</asp:HyperLink></td>
+
+            </tr>
+            <tr>
+                <td><asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/Details/details.aspx" ForeColor="#0033cc">DETAILS</asp:HyperLink></td>
+            </tr>
+        </table>
+        <br /><br />
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div align="Center">
+            <asp:Label ID="Label1" runat="server" BackColor="#FFFF66" ForeColor="Maroon"></asp:Label>
+               </div> 
+                <br /><br />
+       <table class="footer" bottom="0px" align="Center" >
+        <tr>
+            <td><asp:Label ID="lblStatus8" runat="server" Text-="CopyRight &amp;copy AKASH CREATIONS,BAREILLY,<br/>PIN_CODE:243001" Font-Bold="true" ForeColor="DarkBlue">
+
+                </asp:Label></td>
+        </tr>
+    </table>
+            </div>
+            </form>
+</body>
+</html>

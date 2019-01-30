@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminFunctionalities.master.cs" Inherits="USER_ADMIN_page_ADMINFUNCTIONALITIES_AdminFunctionalities" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" style="background-color:bisque">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style4 {
+            width: 423px;
+        }
+        .auto-style6 {
+            width: 304px;
+        }
+        .auto-style7 {
+            width: 364px;
+        }
+        .auto-style8 {
+            width: 392px;
+        }
+    </style>
+</head>
+<body style="background-color:bisque">
+    <form id="form1" runat="server">
+        <div align="Right">
+        <asp:Button ID="btnlogout" runat="server" Text="LOGOUT" Font-Names="algerian" BorderColor="Red" BorderStyle="Groove" OnClick="btnlogout_Click" />
+       </div>
+         <div align="Center">
+            <asp:Label ID="lblStatus" runat="server" Text="ONLINE LIBRARY MANAGEMENT SYSTEM" ForeColor="ForestGreen" Font-Size="XX-Large" Font-Names="algerian" Font-Bold="true"></asp:Label>
+             <asp:Image ID="Image1" runat="server" ImageUrl="~/USER_ADMIN page/ADMINFUNCTIONALITIES/FUNCTIONALITIESIMAGES/03.jpg" Height="356px" Width="1250px" />
+    <div>
+        &nbsp;<table border="1" style="background-color:cornflowerblue">
+            <tr>
+                <td class="auto-style6"><asp:HyperLink ID="hyperlink1" NavigateUrl="~/USER_ADMIN page/ADMINFUNCTIONALITIES/FUNCTIONALITIESIMAGES/DisplayBooksDetails.aspx" runat="server" ForeColor="Wheat" Text="SHOW_BOOKS"></asp:HyperLink></td>
+                <td class="auto-style6"><asp:HyperLink ID="hyperlink5" NavigateUrl="~/USER_ADMIN page/ADMINFUNCTIONALITIES/InsertBooksRecords.aspx" runat="server" ForeColor="Wheat" Text="ADD_BOOKS"></asp:HyperLink></td>
+                <td class="auto-style7"><asp:HyperLink ID="hyperlink2" NavigateUrl="~/USER_ADMIN page/ADMINFUNCTIONALITIES/IssueReturnBooks.aspx" runat="server" ForeColor="Wheat" Text="ISSUE"></asp:HyperLink></td>
+                <td class="auto-style8"><asp:HyperLink ID="hyperLink3" NavigateUrl="~/USER_ADMIN page/ADMINFUNCTIONALITIES/IssueReturnBooks.aspx" runat="server" ForeColor="Wheat" Text="RETURN"></asp:HyperLink></td>
+                <td class="auto-style4"><asp:HyperLink ID="hyperlink4" NavigateUrl="~/USER_ADMIN page/StudentFine/StudentFineForm.aspx" runat="server" ForeColor="Wheat" Text="PENALTY"></asp:HyperLink></td>
+            </tr>
+        </table>
+        <br /><br />
+        </div>
+        <div align="center">
+        <asp:Image ID="Button" runat="server" BorderStyle="Groove" ImageUrl="~/USER_ADMIN page/ADMINFUNCTIONALITIES/T5751.jpg" BorderWidth="5" BorderColor="Fuchsia" />
+        </div>
+        <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
